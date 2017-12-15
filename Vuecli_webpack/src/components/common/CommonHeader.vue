@@ -1,0 +1,38 @@
+<template>
+  <div class="header" :style="{background:bgColor}">
+    <button :style="{background:bgColor}">首页</button>
+    <h2>{{title}}</h2>
+  </div>
+</template>
+<script>
+  export default {
+    props: ['title','bgColor']
+  }
+</script>
+<style>
+.header{
+  height: 1rem;
+  display: flex;
+  position: fixed;
+  top:0;
+  width: 100%;
+}
+  .header button{
+    height: 1rem;
+    width: 1rem;
+    color: #fff;
+    float: left;
+    border: none;
+    outline:none;
+
+
+
+  }
+  .header h2 {
+    float: left;
+    color: #fff;
+    text-align: center;
+    flex:1;
+    text-indent:-1rem ;
+  }
+</style>
