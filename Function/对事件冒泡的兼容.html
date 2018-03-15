@@ -26,13 +26,31 @@
   </div>
   <script>
     oDiv1 = document. getElementById("div1");
-    oDiv1.addEventListener("click",function(){
-      alert(123);
-    },false);
+    // oDiv1.addEventListener("click",function(){
+    //   alert(123);
+    // },false);
     oDiv2 = document. getElementById("div2");
-    oDiv2.addEventListener("click",function(){
+    // oDiv2.addEventListener("click",function(){
+    //   alert(456);
+    // },false);
+    //IE 下为 attachEvent("onclick",function(){});
+    addEvent(oDiv1,"click",function(){
+      alert(123);
+    });
+    addEvent(oDiv2,"click",function(){
       alert(456);
-    },false);
+    });
+
+    function addEvent(elem,type,handler){
+      if(elem.addEventListener){
+        elem.addEventListener(type,handler);
+      }else if(elem.attachEvent){
+        elem.attachEvent("on" + type,handler)
+      }else {
+        elem["on" + type] = handler;
+
+      }
+    }
   </script>
 </body>
 </html>
