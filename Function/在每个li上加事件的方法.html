@@ -18,15 +18,24 @@
     var oUl = document.getElementById("tab");
     var aLi = document.getElementsByTagName("li");
     // 第一种
+    // for(var i = 0; i<aLi.length; i++){
+    //   aLi[i].index = i;
+    // }
+    // oUl.onclick = function(e){
+    //   var target = e.target || window.event.srcElement;
+    //   console.log(target.innerHTML);
+    // console.log(target.index);
+    // }
+    
+    //第二种
     for(var i = 0; i<aLi.length; i++){
       aLi[i].index = i;
+      (function(idx){
+        aLi[idx].onclick = function(){
+          console.log(this.innerHTML);
+        };
+      })(i);
     }
-    oUl.onclick = function(e){
-      var target = e.target || window.event.srcElement;
-      console.log(target.innerHTML);
-    console.log(target.index);
-    }
-
 
 
   </script>
