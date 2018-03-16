@@ -7,7 +7,7 @@
        elem[type + handler] = function(){
          handler.call(elem);
        };
-       elem.attachEvent("on" + type,elem[type + handler]);
+       elem.attachEvent("on" + type,elem[type + handler]); //elem.xx固定时，在多个添加时，与删除对象不符合
     }else {
       elem["on" + type] = handler;
     }
