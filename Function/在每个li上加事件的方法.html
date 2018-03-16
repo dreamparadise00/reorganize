@@ -22,11 +22,11 @@
     //   aLi[i].index = i;
     // }
     // oUl.onclick = function(e){
-    //   var target = e.target || window.event.srcElement;
+    //   var target = e.target || window.event.srcElement;  //ie下兼容
     //   console.log(target.innerHTML);
     // console.log(target.index);
     // }
-    
+
     //第二种
     for(var i = 0; i<aLi.length; i++){
       aLi[i].index = i;
