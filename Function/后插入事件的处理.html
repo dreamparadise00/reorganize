@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" name="button" id="add">add</button>
+  <ul id="tab">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script type="text/javascript">
+    var oBtn  = document.getElementById("add");
+    var oUl = document.getElementById("tab");
+    var aLi = document.getElementsByTagName("li");
+    oUl.onclick = function(e){
+      var target = e.target || window.event.srcElement;  //ie下兼容
+      console.log(target.innerHTML);
+      // console.log(target.index);
+    }
+    oBtn.onclick = function(){
+      var oLi = document.createElement("li");
+      oLi.innerHTML = Math.random();
+      oUl.appendChild(oLi);
+    };
+
+
+  </script>
+</body>
+</html>
