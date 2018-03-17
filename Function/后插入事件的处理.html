@@ -19,7 +19,7 @@
     var oBtn  = document.getElementById("add");
     var oUl = document.getElementById("tab");
     var aLi = document.getElementsByTagName("li");
-    oUl.onclick = function(e){
+    oUl.onclick = function(e){    //给父元素
       var target = e.target || window.event.srcElement;  //ie下兼容
       console.log(target.innerHTML);
       // console.log(target.index);
