@@ -20,8 +20,10 @@
   </div>
   <script>
     var oDiv = document.getElementById("aaa");
-    alert(getComputedStyle(oDiv,null).width);
-    
+    // 第一种
+    // alert(getComputedStyle(oDiv,null).width);
+    // 第二种
+    alert(oDiv.currentStyle["width"]);  //ie不兼容
   </script>
 </body>
 </html>
