@@ -32,7 +32,16 @@
       alert(getComputedStyle(oDiv,null).width)
     }
       //封装
-    
+      function getStyle(obj,name){
+          if(obj.currentStyle){
+               //针对IE
+               return obj.currentStyle[name];
+           }else{
+               //针对火狐
+               return getComputedStyle(obj,null)[name]
+           }
+       }
+
   </script>
 </body>
 </html>
