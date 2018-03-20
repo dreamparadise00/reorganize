@@ -23,7 +23,16 @@
     // 第一种
     // alert(getComputedStyle(oDiv,null).width);
     // 第二种
-    alert(oDiv.currentStyle["width"]);  //ie不兼容
+    // alert(oDiv.currentStyle["width"]);  //ie不兼容
+    if(oDiv.currentStyle){
+      //针对IE
+      alert(oDiv.currentStyle.width)
+    }else{
+      //针对火狐
+      alert(getComputedStyle(oDiv,null).width)
+    }
+      //封装
+    
   </script>
 </body>
 </html>
