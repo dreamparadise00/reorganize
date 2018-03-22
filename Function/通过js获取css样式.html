@@ -25,20 +25,20 @@
     // 第二种
     // alert(oDiv.currentStyle["width"]);  //ie不兼容
     if(oDiv.currentStyle){
-      //针对IE
+      //针对IE浏览器
       alert(oDiv.currentStyle.width)
     }else{
-      //针对火狐
+      //针对火狐浏览器
       alert(getComputedStyle(oDiv,null).width)
     }
       //封装
       function getStyle(obj,name){
           if(obj.currentStyle){
-               //针对IE
+               //针对IE浏览器
                return obj.currentStyle[name];
            }else{
-               //针对火狐
-               return getComputedStyle(obj,null)[name]
+               //针对火狐浏览器
+               return getComputedStyle(obj,null)[name];
            }
        }
 
